@@ -1,0 +1,26 @@
+# --- Data ---
+# Raw data is excluded: it's large, redistributable-but-not-ours (Kaggle ToS),
+# and reproducible by anyone who downloads it (see README for the link).
+# Only raw/ is ignored for now — processed/ and models/ will be added here
+# later once we decide what (if anything) is small enough to commit.
+data/raw/
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+*.egg-info/
+
+# --- Secrets / config ---
+.env
+.env.*
+
+# --- OS / editor cruft ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
