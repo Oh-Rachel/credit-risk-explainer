@@ -1,9 +1,16 @@
 # --- Data ---
 # Raw data is excluded: it's large, redistributable-but-not-ours (Kaggle ToS),
 # and reproducible by anyone who downloads it (see README for the link).
-# Only raw/ is ignored for now — processed/ and models/ will be added here
-# later once we decide what (if anything) is small enough to commit.
 data/raw/
+
+# Processed data is derived from the raw Kaggle data (same ToS/redistribution
+# reasoning) and is fully reproducible by running 01-02 in notebooks/.
+data/processed/
+
+# --- Models ---
+# Trained model artifacts and the chosen threshold are regenerable by running
+# 03_modeling.ipynb and 04_threshold_tuning.ipynb — not committed as binaries.
+models/
 
 # --- Python ---
 __pycache__/
