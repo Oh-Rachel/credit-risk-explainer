@@ -28,6 +28,7 @@ env/
 
 # --- Personal / assistant notes (not shared project docs) ---
 CLAUDE.md
+.claude/
 
 # --- OS / editor cruft ---
 .DS_Store
