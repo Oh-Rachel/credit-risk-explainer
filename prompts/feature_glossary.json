@@ -1,0 +1,74 @@
+{
+  "families": [
+    {
+      "name": "Payment delinquency history",
+      "note": "Three severity tiers of the same behavior. Never contrast tiers against each other.",
+      "features": [
+        {
+          "feature": "NumberOfTime30-59DaysPastDueNotWorse",
+          "definition": "Number of times borrower has been 30-59 days past due but no worse in the last 2 years.",
+          "high_value_means": "More frequent mild payment delays, a moderate risk signal."
+        },
+        {
+          "feature": "NumberOfTime60-89DaysPastDueNotWorse",
+          "definition": "Number of times borrower has been 60-89 days past due but no worse in the last 2 years.",
+          "high_value_means": "More frequent moderate payment delays, a moderate to high risk signal."
+        },
+        {
+          "feature": "NumberOfTimes90DaysLate",
+          "definition": "Number of times borrower has been 90 days or more past due.",
+          "high_value_means": "A history of serious payment failure, one of the strongest signals of higher default risk."
+        }
+      ]
+    },
+    {
+      "name": "Income reliability",
+      "note": "These two partly reflect the same fact: income information is unreliable for this applicant. Present as one theme when both appear.",
+      "features": [
+        { "feature": "DebtRatio",
+          "definition": "The applicant's monthly debt payments and living costs divided by monthly gross income. A value of 0.5 means half of income is already committed.",
+          "high_value_means": "A high ratio indicates that a large portion of the applicant's income is already committed to debt payments, suggesting potential financial strain and higher risk of default."
+        },
+        { "feature": "income_was_missing",
+          "definition": "Flag created during preprocessing: 1 if the applicant did not disclose income (the missing value was filled with the median income for modeling).",
+          "high_value_means": "Income information is unreliable for this applicant. Extreme DebtRatio values frequently coincide with missing income, so the two should be read as one theme rather than independent evidence." 
+        }
+      ]
+    },
+    {
+      "name": "Credit portfolio size",
+      "note": "Real estate lines are a subset of total open lines.",
+      "features": [
+        { "feature": "NumberOfOpenCreditLinesAndLoans",
+          "definition": "Number of Open loans (installment like car loan or mortgage) and Lines of credit (e.g. credit cards)",
+          "high_value_means": "A higher number of open credit lines and loans may indicate that the borrower has more financial obligations, which could increase the risk of default if not managed properly."
+        },
+        { "feature": "NumberRealEstateLoansOrLines",
+          "definition": "Number of mortgage and real estate loans including home equity lines of credit",
+          "high_value_means": "A higher number of real estate loans may indicate a larger financial commitment and increased risk of default." }
+      ]
+    },
+    {
+      "name": "Standalone features",
+      "note": "No grouping needed.",
+      "features": [
+        { "feature": "RevolvingUtilizationOfUnsecuredLines",
+          "definition": "How much of their available credit card and personal credit limits the applicant is currently using. A value of 1.0 means fully maxed out.",
+           "high_value_means": "A higher utilization rate indicates that the borrower is using a larger portion of their available credit, which may suggest financial stress and a higher risk of default." 
+        },
+        { "feature": "age",
+          "definition": "Age of borrower in years",
+          "high_value_means": "Higher age is associated with lower default risk in this data, consistent with longer credit histories and more stable finances."
+        },
+        { "feature": "MonthlyIncome",
+          "definition": "The borrower's monthly income",
+          "high_value_means": "A higher monthly income may indicate a greater ability to meet financial obligations, potentially reducing default risk."
+        },
+        { "feature": "NumberOfDependents",
+          "definition": "Number of dependents in family excluding themselves (spouse, children etc.)",
+          "high_value_means": "A higher number of dependents may indicate a greater financial burden and potentially increase the risk of default."
+        }
+      ]
+    }
+  ]
+}
