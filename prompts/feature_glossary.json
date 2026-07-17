@@ -57,7 +57,7 @@
            "high_value_means": "A higher utilization rate indicates that the borrower is using a larger portion of their available credit, which may suggest financial stress and a higher risk of default." 
         },
         { "feature": "age",
-          "definition": "Age of borrower in years",
+          "definition": "Age of borrower in years.",
           "high_value_means": "Higher age is associated with lower default risk in this data, consistent with longer credit histories and more stable finances."
         },
         { "feature": "MonthlyIncome",
